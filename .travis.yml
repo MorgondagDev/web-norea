@@ -13,7 +13,7 @@ before_deploy:
   - ~/.local/bin/aws configure set preview.cloudfront true
 deploy:
   provider: script
-  script: ~/.local/bin/aws s3 sync web $BUCKET $REGION --delete
+  script: ~/.local/bin/aws s3 sync web $BUCKET --delete --region eu-west-1
   skip_cleanup: true
   on:
     branch: master
